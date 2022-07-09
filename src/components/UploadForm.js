@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import Header from "./Header";
 import { Web3Storage } from 'web3.storage/dist/bundle.esm.min.js'
 import { useMoralis } from "react-moralis";
 
@@ -71,6 +70,8 @@ function UploadForm() {
         setWebsite('')
         setDescription('');
         setCheckbox(null);
+        addData();
+        storeFiles()
     }
    
 // Web3Storage
@@ -103,8 +104,8 @@ async function storeFiles(){
     console.log("stored files with cid", cid);
     return cid;
 }
-storeFiles()
 
+  
     return (
         <div style={{ backgroundColor: "aliceblue" }} className="col">
             <div className="form-style-2 offset-4 row-8">
